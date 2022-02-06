@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tourism - Booking</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Carattere' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Charmonman' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Charm' rel='stylesheet'>
+        <!--  
+        <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css">-->
+        <style> 
+            body{
+                background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+            }
+            main{
+                min-height: 385px;
+            }
+            .navbar-style{
+                background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+                padding: 20px;
+                font-size: 20px;
+            }
+            .navbar-default .navbar-brand{
+                color: #01AD79;
+            }
+            .navbar-default .navbar-brand:hover{
+                color: #0055B3;
+            }
+            .navbar-brand{
+                padding-top: 15px;
+                padding-left: 20px;
+                font-size: 50px;
+                font-style: italic;
+                font-weight: bold;
+                font-family: Georgia;
+            }
+            img.navbar-brand{
+                padding: 0px;
+                border: none;
+            }
+            .nav-pills > li > a{
+                color: #0055B3;
+                font: bold 20px Calibri;
+            }
+            .nav-pills > li.active > a{
+                background-color: #0055B3;
+            }
+            .nav-pills > li.active > a:hover{
+                background-color: #0055B3;
+            }
+            .nav-pills > li.active > a:focus{
+                background-color: #0055B3;
+            }
+            .nav-pills > li > a:hover{
+                color: white;
+                background-color: #0055B3;
+            }
+            @media screen and (max-width: 382px) {
+                .navbar-brand{
+                    font-size: 45px;
+                }
+            }
+            @media screen and (max-width: 363px) {
+                .navbar-brand{
+                    padding-top: 15px;
+                    padding-left: 5px;
+                    font-size: 27px;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                main { margin-top: 75px; }
+            }
+            @media screen and (min-width:768px) and (max-width: 790px) {
+                main { margin-top: 170px; }
+            }
+            @media screen and (min-width:790px) and (max-width: 1011px) {
+                main { margin-top: 120px; }
+            }
+            @media screen and (min-width: 1011px) {
+                main { margin-top: 75px; }
+            }
+            h1{
+                padding: 10px;
+                color: #2F4858;
+                font-family: Carattere;
+                font-weight: 800;
+            }
+            form{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            label{
+                font: bold 20px sofia;
+                text-align: left;
+                margin: 0px;
+            }
+            select{
+                width: 150px;
+                border-radius: 10px;
+                height: 30px;
+            }
+            select[disabled]{
+                cursor: not-allowed;
+            }
+            #noresult{
+                display: none;
+                color: red;
+                font: 1000 30px Sofia;
+                text-align: center;
+            }
+            @media only screen and (max-width: 400px){
+                .media-left{
+                    display: none;
+                }
+            }
+            .media{
+                display: none;
+                cursor: pointer;
+                background-color: #CDFBE4;
+                box-shadow: 2px 5px 5px 0 grey;   
+            }
+            .media-object{
+                width: 200px;
+            }
+            .media-heading{
+                padding: 10px 0 0 0;
+                font-family: Charm;
+                font-weight: bold;
+                font-size: 25px;
+                color: #0884A7;
+            }
+            b{
+                font-family: Sofia;
+                font-size: 15px;
+            }
+            .city, .state{
+                font-family: Charmonman;
+                font-size: 15px;
+                font-weight: 700;
+                color: #787C1C;
+            }
+            .type{
+                width: 150%;
+                height: 0;
+                border-bottom: 20px solid #045089;
+                border-top: 20px solid #045089;
+                border-left: 15px solid transparent;
+                float: right;
+            }
+            .type > img{
+                position: relative;
+                top: -9px;
+                right: -10px;
+                width: 20px;
+            }
+            .type > span{
+                color: white;
+                position: relative;
+                top: -9px;
+                right: -10px;
+                font-weight: 700;
+            }
+            .navbar-default .navbar-nav > li > a{
+                color: white;
+            }
+            .navbar-default .navbar-nav > li > a:hover{
+                color: white;
+            }
+            .navbar-foot{
+                background-color: #01AD79;
+                margin-bottom: 0;
+                margin-top: auto;
+                font: 15px Calibri;
+                float: bottom;
+            }
+            .footerlist > li > a:hover{
+                text-decoration: underline;
+            }
+            .footerlist > li > a[href='#']{
+                cursor: default;
+                pointer-events: none;
+            }
+            footer p{
+                text-align: center;
+                font: 15px Calibri;
+                color: white;
+            }
+            .list-inline{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .fa{
+                color: #FF9671;
+            }
+        </style>
+    </head>
+    <body onload="showmedia()">
+        <header class="navbar navbar-default navbar-style navbar-fixed-top">
+            <section class="container-fluid">
+                <section class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img class="navbar-brand img-responsive img-thumbnail" src="images/logo.jpg">
+                    <a class="navbar-brand" href="homepage.html">Tourism</a>
+                </section>
+                <section class="collapse navbar-collapse" id="navtop">
+                    <ul class="nav navbar-right nav-pills">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="aboutus.html">About</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li class="active"><a href="#">Plan a Trip</a></li>
+                        <li><a href="Signuppage.html">Sign up</a></li>
+                        <li><a href="Loginpage.html">Sign in</a></li>
+                        <li><a href="Contact.html">Contact us</a></li>
+                    </ul>
+                </section>
+            </section>
+        </header>
+        <main class="container-fluid">
+            <h1 class="text-left">Plan your Trip</h1>
+            <section class="row">
+                <form class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <label>State</label>
+                    <select id="choosestate" onclick="displaycity()">
+                        <option>select</option>
+                        <option>Andaman and Nicobar</option>
+                        <option>Andhra pradesh</option>
+                        <option>Bihar</option>
+                        <option>Chhatisgarh</option>
+                        <option>Goa</option>
+                        <option>Haryana</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Ladakh</option>
+                        <option>Lakshadweep</option>
+                        <option>Maharashtra</option>
+                        <option>Puducherry</option>
+                        <option>Punjab</option>
+                        <option>Tamilnadu</option>
+                        <option>Telangana</option>
+                        <option>Uttar pradesh</option>
+                        <option>Uttrakhand</option>
+                    </select>
+                </form>
+                <form class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <label>City</label>
+                    <select id="choosecity" disabled title="Select a state" onchange="displaycategory()">
+                        <option>select</option>
+                    </select>
+                </form>
+                <form class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <label>Category</label>
+                    <select id="choosecategory" disabled title="Select a city" onclick="changelist()">
+                        <option selected>All</option>
+                        <option>Hotels</option>
+                        <option>Tickets</option>
+                        <option>Fairs</option>
+                    </select>
+                </form>
+            </section>
+            <br>
+            <p id="noresult">No Results!!!</p>
+            <section class="row">
+                <section class="col-xs-0 col-lg-2"></section>
+                <section id="display" class="col-xs-12 col-lg-8">
+                    <section id="d1" class="media"  onclick="openhotels(this.id)">
+                        <section class="media-left">
+                            <img src="images/Hotel A.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Hotel A</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Chennai</span><br><b>State: </b><span class="state">Tamilnadu</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>HOTELS</span></p>
+                        </section>
+                    </section>
+                    <section id="d2" class="media"  onclick="openhotels(this.id)">
+                        <section class="media-left">
+                            <img src="images/Hotel B.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Hotel B</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Cochin</span><br><b>State: </b><span class="state">Kerala</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>HOTELS</span></p>
+                        </section>
+                    </section>
+                    <section id="d3" class="media" onclick="opentickets()">
+                        <section class="media-left">
+                            <img src="images/tirumalat.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Thirumala</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Thirupathi</span><br><b>State: </b><span class="state">Andhra pradesh</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>TICKETS</span></p>
+                        </section>
+                    </section>
+                    <section id="d4" class="media">
+                        <section class="media-left">
+                            <img src="images/fairs3.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Book fair</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Madurai</span><br><b>State: </b><span class="state">Tamilnadu</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>FAIRS</span></p>
+                        </section>
+                    </section>
+                    <section id="d5" class="media" onclick="openhotels(this.id)">
+                        <section class="media-left">
+                            <img src="images/Hotel B.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Hotel B</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Vizag</span><br><b>State: </b><span class="state">Andhra pradesh</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>HOTELS</span></p>
+                        </section>
+                    </section>
+                    <section id="d6" class="media">
+                        <section class="media-left">
+                            <img src="images/fairs1.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Exhibition</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Nellore</span><br><b>State: </b><span class="state">Andhra pradesh</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>FAIRS</span></p>
+                        </section>
+                    </section>
+                    <section id="d7" class="media">
+                        <section class="media-left">
+                            <img src="images/guruvayur.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Guruvayur temple</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Gurvuayur</span><br><b>State: </b><span class="state">Kerala</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>TICKETS</span></p>
+                        </section>
+                    </section>
+                    <section id="d8" class="media" onclick="openhotels(this.id)">
+                        <section class="media-left">
+                            <img src="images/Hotel C.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Hotel C</h4>
+                            <p class="media-right"><b>City: </b><span class="city">kr</span><br><b>State: </b><span class="state">Karnataka</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>HOTELS</span></p>
+                        </section>
+                    </section>
+                    <section id="d9" class="media" onclick="openhotels(this.id)">
+                        <section class="media-left">
+                            <img src="images/Hotel D.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Hotel D</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Mahe</span><br><b>State: </b><span class="state">Kerala</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>HOTELS</span></p>
+                        </section>
+                    </section>
+                    <section id="d10" class="media">
+                        <section class="media-left">
+                            <img src="images/fairs3.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Book show</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Guntur</span><br><b>State: </b><span class="state">Andhra pradesh</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>FAIRS</span></p>
+                        </section>
+                    </section>
+                    <section id="d11" class="media">
+                        <section class="media-left">
+                            <img src="images/museum.jpg" class="media-object" alt="logo">
+                        </section>
+                        <section class="media-body">
+                            <h4 class="media-heading">Museum</h4>
+                            <p class="media-right"><b>City: </b><span class="city">Mahe</span><br><b>State: </b><span class="state">Kerala</span></p>
+                        </section>
+                        <section class="media-right">
+                            <p class="type"><span>TICKETS</span></p>
+                        </section>
+                    </section>
+                    
+                </section>
+            </section>
+        </main>
+        <hr>
+        <footer class="navbar navbar-default navbar-foot">
+            <section class="container">
+                <section class="col-lg-3"></section>
+                <section class="col-lg-6">
+                    <ul class="nav navbar-nav footerlist">
+                        <li><a href="homepage.html">HOME</a></li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                        <li><a href="destinations.html">DESTINATIONS</a></li>
+                        <li><a href="#">PLAN TRIPS</a></li>
+                        <li><a href="Contact.html">CONTACT US</a></li>
+                    </ul>
+                </section>
+                <section class="col-lg-3">
+                    <ul class="list-inline">
+                        <li><a href="javascript:poppage('fb')"><span class="fa fa-facebook-square fa-2x"></span> </a> </li>
+                        <li><a href="javascript:poppage('tr')"><span class="fa fa-twitter-square fa-2x"></span> </a> </li>
+                        <li><a href="javascript:poppage('ig')"><span class="fa fa-instagram fa-2x"></span> </a> </li>
+                    </ul>
+                </section>
+            </section>
+            <p>Copyright (c) 2022 All Rights Reserved | An Website for Tourism<br>Created by Angeline Shruthi M (21/PCSA/108) and Hanitha G (21/PCSA/124) from Stella Maris College, Chennai</p>
+        </footer>
+        <!--<script src="bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+                length = document.getElementById('display').childElementCount;
+            function showmedia(){
+                for(i = 1; i<=length; i++){
+                    var sec = document.getElementById('d'+i)
+                    var p = sec.querySelector('.type')
+                    var cat = p.querySelector('span').innerHTML
+                    if(cat == 'HOTELS'){
+                        p.style.borderTopColor = '#3B0B27';
+                        p.style.borderBottomColor = '#3B0B27';
+                    }
+                    else if(cat == 'FAIRS'){
+                        p.style.borderTopColor = '#379B10';
+                        p.style.borderBottomColor = '#379B10';
+                    }
+                    else if(cat == 'TICKETS'){
+                        p.style.borderTopColor = '#251A96';
+                        p.style.borderBottomColor = '#251A96';
+                    }
+                }
+                for(i = 1; i<=4; i++){
+                    document.getElementById('d'+i).style.display = 'block';
+                }
+            }
+            function displaycity(){
+                var flag = false;
+                document.getElementById('choosecategory').selectedIndex = '0';
+                document.getElementById('choosecategory').setAttribute('disabled','disabled');
+                var state = document.getElementById('choosestate').value; 
+                var city = document.getElementById('choosecity'); 
+                var tn = ['Chennai', 'Madurai', 'Thanjavur', 'Thirunelveli'];
+                var ap = ['Guntur', 'Nellore', 'Thirupathi', 'Vizag']
+                var kl = ['Cochin', 'Mahe', 'Trivandrum']
+                for(i = 1; i<=length; i++){
+                    var sec = document.getElementById('d'+i);
+                    if((sec.querySelector('.state').innerHTML) == state){
+                        sec.style.display = 'block';
+                        flag = true;
+                    }
+                    else{
+                        sec.style.display = 'none';
+                    }
+                }
+                if(state != 'select'){
+                    document.getElementById('choosecity').removeAttribute('disabled');
+                    switch(state){
+                        case 'Tamilnadu':
+                            city.length = 1;
+                            for(i = 0; i<tn.length; i++){
+                                const option = new Option(tn[i], tn[i]);
+                                city.appendChild(option);
+                            }
+                            break;
+                        case 'Andhra pradesh':
+                            city.length = 1;
+                            for(i = 0; i<ap.length; i++){
+                                const option = new Option(ap[i], ap[i]);
+                                city.appendChild(option);
+                            }
+                            break;
+                        case 'Kerala':
+                            city.length = 1;
+                            for(i = 0; i<kl.length; i++){
+                                const option = new Option(kl[i], kl[i]);
+                                city.appendChild(option);
+                            }
+                            break;
+                        case 'Karnataka':
+                            city.length = 1;
+                            for(i = 0; i<ap.length; i++){
+                                const option = new Option('kr', 'kr');
+                                city.appendChild(option);
+                            }
+                            break;
+                        default:
+                            city.length = 1;
+                    }
+                }
+                else{
+                    document.getElementById('choosecity').setAttribute('disabled','disabled');
+                    document.getElementById('choosecategory').setAttribute('disabled','disabled');
+                    for(i = 1; i<=3; i++){
+                        document.getElementById('d'+i).style.display = 'block';
+                        flag = true;
+                    }
+                }
+                if(!flag){
+                    document.getElementById('choosecity').setAttribute('disabled','disabled');
+                    document.getElementById('choosecategory').setAttribute('disabled','disabled');
+                    document.getElementById('noresult').style.display = 'block';
+                }
+                else{
+                    document.getElementById('noresult').style.display = 'none';
+                }
+            }
+            function displaycategory(){
+                var flag = false;
+                document.getElementById('choosecategory').selectedIndex = '0';
+                var city = document.getElementById('choosecity').value; 
+                for(i = 1; i<=length; i++){
+                    var sec = document.getElementById('d'+i);
+                    if((sec.querySelector('.city').innerHTML) == city){
+                        sec.style.display = 'block';
+                        flag = true;
+                    }
+                    else{
+                        sec.style.display = 'none';
+                    }
+                }
+                if(city != 'select'){
+                    document.getElementById('choosecategory').removeAttribute('disabled');
+                }
+                else{
+                    document.getElementById('choosecategory').setAttribute('disabled', 'disabled');
+                    var state = document.getElementById('choosestate').value;
+                    for(i = 1; i<=length; i++){
+                        var sec = document.getElementById('d'+i);
+                        if((sec.querySelector('.state').innerHTML) == state){
+                            sec.style.display = 'block';
+                            flag = true;
+                        }
+                        else{
+                            sec.style.display = 'none';
+                        }
+                    }
+                }
+                if(!flag){
+                    document.getElementById('noresult').style.display = 'block';
+                }
+                else{
+                    document.getElementById('noresult').style.display = 'none';
+                }
+            }
+            function changelist(){
+                var flag = false;
+                var state = document.getElementById('choosestate').value;
+                var city = document.getElementById('choosecity').value;
+                var type = document.getElementById('choosecategory').value;
+                if(type != 'All'){
+                    for(i = 1; i<=length; i++){
+                        var sec = document.getElementById('d'+i);
+                        if(((sec.querySelector('.state').innerHTML) == state) && ((sec.querySelector('.city').innerHTML) == city)){
+                            if((sec.querySelector('.type').children[0].innerHTML) == type.toUpperCase()){
+                                sec.style.display = 'block';
+                                flag = true;
+                            }
+                            else{
+                                sec.style.display = 'none';
+                            }
+                        }
+
+                    }
+                }
+                else{
+                    for(i = 1; i<=length; i++){
+                        var sec = document.getElementById('d'+i);
+                        if(((sec.querySelector('.state').innerHTML) == state) && ((sec.querySelector('.city').innerHTML) == city)){
+                            sec.style.display = 'block';
+                            flag = true;
+                        }
+                        else{
+                            sec.style.display = 'none';
+                        }
+                    }
+                }
+                if(!flag){
+                    document.getElementById('noresult').style.display = 'block';
+                }
+                else{
+                    document.getElementById('noresult').style.display = 'none';
+                }
+            }
+            function poppage(page){
+                if(page == 'fb'){
+                    window.open('https://www.facebook.com/','popup');
+                }
+                else if(page == 'tr'){
+                    window.open('https://www.twitter.com/','popup');
+                }
+                else{
+                    window.open('https://www.instagram.com/','popup');
+                }
+            }
+            function opentickets(){
+                window.open('tirumala_booking.html','popup');
+            }
+            function openhotels(i){
+                var e = document.getElementById(i);
+                console.log(e.querySelector('.media-heading').innerHTML);
+                localStorage.setItem('hotelname',e.querySelector('.media-heading').innerHTML);
+                console.log(localStorage.getItem('hotelname'));
+                window.open('Booking_hotels.html','popup');
+            }
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </body>
+</html>

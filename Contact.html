@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism | Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	<style>
+		.header {
+            margin: 10px;
+			overflow: hidden;
+		}
+        #name{
+              margin: 0;
+              padding-top: 0;
+              padding-left: 5px;
+              font-style: italic;
+                font-weight: bold;
+                font-family: Georgia;
+              font-size: 50px;
+              color: #01AD79;
+          }
+          #name:hover{
+              color: #0055B3;
+              background: transparent;
+              text-decoration: none;
+          }
+		.header-right a {
+			float: left;
+			margin-top:5px;
+			color: #0055B3;
+			text-align: center;
+			padding: 14px;
+			font-family:Calibri;
+			font-style:bold;
+			text-decoration: none;
+			font-size: 20px; 
+			line-height: 25px;
+			border-radius: 4px;
+		}
+		.header a:hover {
+		  background-color: #0055B3;
+		  color: white;
+		}
+		.header a.active {
+		  background-color: #0055B3;
+		  color: white;
+		}
+		.header-right {
+		  float: right;
+		}
+		@media screen and (max-width: 500px) {
+		  .header-right a {
+			float: none;
+			display: block;
+			text-align: left;
+		  }
+		  .header-right {
+			float: none;
+		  }
+		}
+		a{
+		text-decoration:none;
+		}
+		img.navbar-brand{
+              margin: 10px 0 10px 10px;
+                padding: 0px;
+            border: none;
+          }
+		*{
+			box-sizing: border-box;
+		}
+		body{
+		  height:auto;
+		  align-items: center;
+		  justify-content: center;
+		  background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+		}
+		footer{
+			background-color:#01AD79;
+			color:white;
+			font-family:Calibri;
+			font-size:15px;
+			text-align:center;
+			z-index:999;
+            margin-top: 40px;
+			
+			height:auto;
+			padding:19px;
+			font-style:bold;
+			text-decoration:none;
+		}
+		.container {
+			background: #CDFBE4;
+			border-radius: 50px;
+			box-shadow: 3px 3px 3px #0055B3;
+			position: relative;
+			overflow: hidden;
+			width: 90%;
+			max-width: 850px;
+		}
+		img {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 5px;
+		}
+        @media (max-width:730px){
+            #t1{
+                display: none;
+            }
+        }
+		#img1{
+			width:100px;
+			height:100px;
+			border-radius:100px;
+		}
+		#gmail1{
+			margin-left:80px;
+			font-family:Calibri;
+			color:#0055B3;
+		}
+		#img2{
+			height:50px;
+			width:50px;
+			margin-left:50px;
+			border-radius:30px;
+		}
+		input {
+			background-color: #eee;
+			border-radius: 8px;
+			padding: 12px 15px;
+			margin: 8px 10% 8px 10%;
+			width: 50%;
+			border-color:#eee;
+			outline:#eee;
+		}
+		input:focus{
+			border: 2px solid #01AD79;
+		}
+		textarea{
+            background-color: #eee;
+			border-radius: 8px;
+			border-color:#eee;
+            margin: 8px 10% 8px 10%;
+            padding: 12px 15px;
+			font-family:Calibri;
+			font-size:15px;
+			outline:#eee;
+            width: 80%;
+		}
+		textarea:focus{
+			border: 2px solid #01AD79;
+		}
+		input[type=submit] {
+			border-radius: 10px;
+			border: 1px solid #005593;
+			background-color:#0055B3;
+			margin: 0px 30% 10px 35%;
+			color: #FFFFFF;
+			font-size: 13px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			width: 30%;
+		}
+		input[type=submit]:hover {
+			background-color: #01ad79;
+		}
+		#head1{
+			margin-left: 10%;
+			color:#0055B3;
+			text-shadow:2px 2px 2px #01ad79;
+			font-family:Calibri;
+		}
+		#head2{
+			margin-left:10%;
+		}
+		#head3{
+			margin-left:10%;
+		}
+        .icon-bar{
+              background-color: grey;
+          }
+          .navbar-toggle{
+              border: 1px solid lightgrey;
+          }
+        footer a[href='#']{
+                cursor: default;
+                pointer-events: none;
+            }
+	</style>
+		
+   </head>
+<body>	
+		<!--Title and nav bar part-->
+		<div class="header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+			<img class="navbar-brand img-responsive img-thumbnail" src="images/logo.jpg"><a href="homepage.html" id="name">Tourism</a>
+			<div id="navtop" class="collapse navbar-collapse header-right">
+				<a href="homepage.html"><b>Home</b></a>
+				<a href="#"><b>About Us</b></a>
+				<a href="destinations.html"><b>Destinations</b></a>
+				<a href="booking.html"><b>Plan a Trip</b></a> 
+				<a href="Signuppage.html"><b>SignUp</b></a>	
+				<a href="Loginpage.html"><b>Sign in</b></a>	
+				<a class="active" href="Contact.html"><b>Contact Us</b></a>
+			</div>
+		</div>
+		<div class="container">
+			<form name="form1" method="post" onsubmit="return validateForm2()";>
+				<!--Box part 1 : address,email,phone-->
+				<table>
+					<tr>
+						<td id="t1">
+							<div id="gmail1">
+								<img id="img2" src="images/location.png">
+								<h4>No : 57/9, Kelly's road,<br> Alwarpet,<br> Chennai - 600 019</h4><br>
+								<img id="img2" src="images/m2.png">
+								<a href="#"><h4><font size="3px" color="#355914">tourism.india@gmail.com</font></h4></a><br>
+								<img id="img2" src="images/p2.png">
+								<h4>Landline : 25977970<br>Phone : 9840589243</h4>
+							</div>
+						</td>
+						
+						<!--Box part 2 : Form part-->
+						<td>
+							<div id="head1">
+								<h1>How can we help you ?</h1>
+							</div>
+							<div id="head2">
+								If you have any queries please feel free to message us here.
+							</div>
+							<div id="head3">
+								It's our pleasure to help you :)
+							</div>
+				            <input type="text" placeholder="Enter your name" name="name">
+								<input type="email" placeholder="Enter your email" name="email">
+							<textarea placeholder="Type your message . . ." name="message" rows="6" cols="53"></textarea>
+							<br><br>
+							<input type="submit" value="SUBMIT">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<br>
+		</div>
+		
+		<!--Bottom part-->
+		<footer>
+            <a href="homepage.html"><font color="white">HOME</font></a> | 
+            <a href="aboutus.html"><font color="white">ABOUT US</font></a> | 
+            <a href=destinations.html""><font color="white">DESTINATIONS</font></a> | 
+            <a href="booking.html"><font color="white">PLAN TRIPS</font></a> | 
+            <a href="Loginpage.html"><font color="white">SIGN IN</font></a> | 
+            <a href="Signuppage.html"><font color="white">SIGN UP</font></a> | 
+            <a href="#"><font color="white">CONTACT US</font></a><br>
+            <p>Copyright (c) 2022 All Rights Reserved | An Website for Tourism<br>Created by Angeline Shruthi M (21/PCSA/108) and Hanitha G (21/PCSA/124) from Stella Maris College, Chennai</p>
+        </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			function validateForm2(){
+				var x=/^[A-Za-z]+$/;
+				var name=document.form1.name.value;
+				var email=document.form1.email.value;
+				var message=document.form1.message.value;
+				if(name=="")
+				{
+					alert("Please enter your name.");
+					return false;
+				}
+				if(x.test(name)==false)
+				{
+					alert("Please enter a valid name.");
+					return false;
+				}
+				if(email=="")
+				{
+					alert("Please enter your registered Email ID.");
+					return false;
+				}
+				
+				if(message=="")
+				{
+					alert("Please enter your valuable feedback.");
+					return false;
+				}
+				alert("Thankyou for spending your valuable time for a feedback for us :) ");
+				return true;
+			}
+		</script>
+
+	</body>
+</html>

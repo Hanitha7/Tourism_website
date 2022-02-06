@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tourism</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--  
+        <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css">-->
+        <style>
+            body{
+                background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+            }
+            .navbar-style{
+                padding: 20px;
+                font-size: 20px;
+                background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+            }
+            .navbar-default .navbar-brand{
+                color: #01AD79;
+            }
+            .navbar-default .navbar-brand:focus{
+                color: #01AD79;
+            }
+            .navbar-default .navbar-brand:hover{
+                color: #0055B3;
+            }
+            .navbar-brand{
+                padding-top: 15px;
+                padding-left: 20px;
+                font-size: 50px;
+                font-style: italic;
+                font-weight: bold;
+                font-family: Georgia;
+            }
+            img.navbar-brand{
+                padding: 0px;
+                border: none;
+            }
+            .nav-pills > li > a{
+                color: #0055B3;
+                font: bold 20px Calibri;
+            }
+            .nav-pills > li.active > a{
+                background-color: #0055B3;
+            }
+            .nav-pills > li.active > a:hover{
+                background-color: #0055B3;
+            }
+            .nav-pills > li.active > a:focus{
+                background-color: #0055B3;
+            }
+            .nav-pills > li > a:hover{
+                color: white;
+                background-color: #0055B3;
+            }
+            @media screen and (max-width: 382px) {
+                .navbar-brand{
+                    font-size: 45px;
+                }
+            }
+            @media screen and (max-width: 363px) {
+                .navbar-brand{
+                    padding-top: 15px;
+                    padding-left: 5px;
+                    font-size: 27px;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                main { margin-top: 100px; }
+            }
+            @media screen and (min-width:768px) and (max-width: 790px) {
+                main { margin-top: 170px; }
+            }
+            @media screen and (min-width:790px) and (max-width: 1011px) {
+                main { margin-top: 120px; }
+            }
+            @media screen and (min-width: 1011px) {
+                main { margin-top: 100px; }
+            }
+            main{
+                padding: 10px;
+                font: 15px Calibri;
+            }
+            main p{
+                text-indent: 10px;
+                font-size: 18px;
+            }
+            .navbar-default .navbar-nav > li > a{
+                color: white;
+            }
+            .navbar-default .navbar-nav > li > a:hover{
+                color: white;
+            }
+            .navbar-foot{
+                background-color: #01AD79;
+                margin-bottom: 0;
+                font: 15px Calibri;
+            }
+            .footerlist > li > a:hover{
+                text-decoration: underline;
+            }
+            .footerlist > li > a[href='#']{
+                cursor: default;
+                pointer-events: none;
+            }
+            footer p{
+                text-align: center;
+                font: 15px Calibri;
+                color: white;
+            }
+            .list-inline{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .fa{
+                color: #FF9671;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="navbar navbar-default navbar-style navbar-fixed-top">
+            <section class="container-fluid">
+                <section class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img class="navbar-brand img-responsive img-thumbnail" src="images/logo.jpg">
+                    <a class="navbar-brand" href="#">Tourism</a>
+                </section>
+                <section class="collapse navbar-collapse" id="navtop">
+                    <ul class="nav navbar-right nav-pills">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li class="active"><a href="#">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="booking.html">Plan a Trip</a></li>
+                        <li><a href="Signuppage.html">Sign up</a></li>
+                        <li><a href="Loginpage.html">Sign in</a></li>
+                        <li><a href="Contact.html">Contact us</a></li>
+                    </ul>
+                </section>
+            </section>
+        </header>
+        <main>
+            <h2>About Us</h2>
+            <p>This is a website providing details about various tourist places in India.  We provide you details separated into various categories like states, spiritual, fairs, museums, cities, monuments.  Visitors can also gain information about the hotel facilities available in the cities.  Also learn about the famous cuisines of the places</p>
+        </main>
+        <footer class="navbar navbar-default navbar-foot navbar-fixed-bottom">
+            <section class="container-fluid">
+                <section class="col-lg-3"></section>
+                <section class="col-lg-6">
+                    <ul class="nav navbar-nav footerlist">
+                        <li><a href="homepage.html">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="destinations.html">DESTINATIONS</a></li>
+                        <li><a href="booking.html">PLAN TRIPS</a></li>
+                        <li><a href="Contact.html">CONTACT US</a></li>
+                    </ul>
+                </section>
+                <section class="col-lg-3">
+                    <ul class="list-inline">
+                        <li><a href="javascript:poppage('fb')"><span class="fa fa-facebook-square fa-2x"></span> </a> </li>
+                        <li><a href="javascript:poppage('tr')"><span class="fa fa-twitter-square fa-2x"></span> </a> </li>
+                        <li><a href="javascript:poppage('ig')"><span class="fa fa-instagram fa-2x"></span> </a> </li>
+                    </ul>
+                </section>
+            </section>
+            <p>Copyright (c) 2022 All Rights Reserved | An Website for Tourism<br>Created by Angeline Shruthi M (21/PCSA/108) and Hanitha G (21/PCSA/124) from Stella Maris College, Chennai</p>
+        </footer>
+        <!--<script src="bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript">
+            function poppage(page){
+                if(page == 'fb'){
+                    window.open('https://www.facebook.com/','popup');
+                }
+                else if(page == 'tr'){
+                    window.open('https://www.twitter.com/','popup');
+                }
+                else{
+                    window.open('https://www.instagram.com/','popup');
+                }
+            }
+        </script>
+    </body>
+</html>

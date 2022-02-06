@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tourism</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--  
+        <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css">-->
+        <style>
+            body{
+                background-color: #FFF5FF;
+            }
+            .navbar-style{
+                padding: 20px;
+                font-size: 20px;
+                background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+            }
+            .navbar-default .navbar-brand{
+                color: #01AD79;
+            }
+            .navbar-default .navbar-brand:focus{
+                color: #01AD79;
+            }
+            .navbar-default .navbar-brand:hover{
+                color: #0055B3;
+            }
+            .navbar-brand{
+                padding-top: 15px;
+                padding-left: 20px;
+                font-size: 50px;
+                font-style: italic;
+                font-weight: bold;
+                font-family: Georgia;
+            }
+            img.navbar-brand{
+                padding: 0px;
+                border: none;
+            }
+            .nav-pills > li > a{
+                color: #0055B3;
+                font: bold 20px Calibri;
+            }
+            .nav-pills > li.active > a{
+                background-color: #0055B3;
+            }
+            .nav-pills > li.active > a:hover{
+                background-color: #0055B3;
+            }
+            .nav-pills > li.active > a:focus{
+                background-color: #0055B3;
+            }
+            .nav-pills > li > a:hover{
+                color: white;
+                background-color: #0055B3;
+            }
+            @media screen and (max-width: 382px) {
+                .navbar-brand{
+                    font-size: 45px;
+                }
+            }
+            @media screen and (max-width: 363px) {
+                .navbar-brand{
+                    padding-top: 15px;
+                    padding-left: 5px;
+                    font-size: 27px;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                main { margin-top: 75px; }
+            }
+            @media screen and (min-width:768px) and (max-width: 790px) {
+                main { margin-top: 170px; }
+            }
+            @media screen and (min-width:790px) and (max-width: 1011px) {
+                main { margin-top: 120px; }
+            }
+            @media screen and (min-width: 1011px) {
+                main { margin-top: 75px; }
+            }
+            #section2{
+                padding: 15px;
+            }
+            #places{
+                color: #587B98;
+                padding: 10px;
+                font-size: 40px;
+                font-weight: bold;
+                font-family: Times;
+                text-shadow: 2px 2px rgba(0, 0, 0, 0.2), 2px 2px rgba(0, 0, 0, 0.19);
+            }
+            .place{
+                border-radius: 10%;
+                margin: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #D8D5E7;
+            }
+            .place a:hover{
+                text-decoration: none;
+            }
+            .place img{
+                width: 200px;
+                height: 200px;
+             }
+            .place p{
+                padding: 5px;
+                color: #296864;
+                font-style: italic;
+                font-size: 100%;
+                font-family: Algerian;
+                text-decoration: none;
+            }
+            #section3{
+                padding: 15px;
+            }
+            .section3part{
+                margin-bottom: 20px;
+            }
+            .section3part img{
+                width: 100%;
+                height: 200px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #D8D5E7;
+            }
+            .imagep{
+                position: relative;
+                text-align: center;
+            }
+            .centered{
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font: bold 25px Serif;
+                color: #EAFEF4;
+                text-shadow: 3px 3px #020F1B;
+            }
+            .navbar-default .navbar-nav > li > a{
+                color: white;
+            }
+            .navbar-default .navbar-nav > li > a:hover{
+                color: white;
+            }
+            .navbar-foot{
+                background-color: #01AD79;
+                margin-bottom: 0;
+                font: 15px Calibri;
+            }
+            .footerlist > li > a:hover{
+                text-decoration: underline;
+            }
+            .footerlist > li > a[href='#']{
+                cursor: default;
+                pointer-events: none;
+            }
+            footer p{
+                text-align: center;
+                font: 15px Calibri;
+                color: white;
+            }
+            .list-inline{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .fa{
+                color: #FF9671;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="navbar navbar-default navbar-style navbar-fixed-top">
+            <section class="container-fluid">
+                <section class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img class="navbar-brand img-responsive img-thumbnail" src="images/logo.jpg">
+                    <a class="navbar-brand" href="#">Tourism</a>
+                </section>
+                <section class="collapse navbar-collapse" id="navtop">
+                    <ul class="nav navbar-right nav-pills">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="booking.html">Plan a Trip</a></li>
+                        <li><a href="Signuppage.html">Sign Up</a></li>
+                        <li><a href="Loginpage.html">Sign In</a></li>
+                        <li><a href="Contact.html">Contact us</a></li>
+                    </ul>
+                </section>
+            </section>
+        </header>
+        <main class="container-fluid">
+            <section class="row">
+                <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <section id="mycarousel" class="carousel slide" data-ride="carousel">
+                        <section class="carousel-inner">
+                            <section class="item active">
+                                <img class="img-responsive" src="images/tourism1.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism2.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism3.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism4.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism5.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism6.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism7.jpg" alt="tourism">
+                            </section>
+                            <section class="item">
+                                <img class="img-responsive" src="images/tourism8.jpg" alt="tourism">
+                            </section>
+                        </section>
+                        <a class="left carousel-control" href="#mycarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      <a class="right carousel-control" href="#mycarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                    </section>
+                </section>
+            </section>
+            <section id="section2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1 id="places" class="text-lead text-center">PLACES</h1>
+                <section class="owl-carousel owl-theme">
+                    <section class="item place">
+                        <a href="javascript:setheading('Chennai')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/chennai.jpg"><p class="text-center">CHENNAI</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Madurai')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/madurai.jpg"><p class="text-center">MADURAI</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Coimbatore')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/coimbatore.jpg"><p class="text-center">COIMBATORE</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Thirunelveli')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/thirunelveli.jpg"><p class="text-center">THIRUNELVELI</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Kanyakumari')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/kanyakumari.jpg"><p class="text-center">KANYAKUMARI</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Thoothukudi')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/thoothukudi.jpg"><p class="text-center">THOOTHUKUDI</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Kancheepuram')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/kancheepuram.jpg"><p class="text-center">KANCHEEPURAM</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Thanjavur')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/thanjavur.jpg"><p class="text-center">THANJAVUR</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Kodaikanal')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/kodaikanal.jpg"><p class="text-center">KODAIKANAL</p></a>
+                    </section>
+                    <section class="item place">
+                        <a href="javascript:setheading('Ooty')" data-toggle="tooltip" title=" click to know more"><img class="img-responsive" src="images/ooty.jpg"><p class="text-center">OOTY</p></a>
+                    </section>
+                </section>
+            </section>
+            <section id="section3" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <section class="row">
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-3 section3part imagep">
+                        <a href="Events_Spiritual.html" data-toggle="tooltip" title="Temples, Ashrams, ..."><img alt="spiritual" class="img-responsive" src="images/spiritual.jpg"></a>
+                        <a href="Events_Spiritual.html"><div class="centered">SPIRITUAL</div></a>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-3 section3part imagep">
+                        <a href="Nature.html" data-toggle="tooltip" title="Beaches, Parks, ..."><img alt="nature" class="img-responsive" src="images/nature.jpg"></a>
+                        <a href="Nature.html"><div class="centered">NATURE</div></a>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-3 section3part imagep">
+                        <a href="Wildlife.html" data-toggle="tooltip" title="National parks, zoos, sancturies, ..."><img alt="wildlife" class="img-responsive" src="images/wildlife.png"></a>
+                        <a href="Wildlife.html"><div class="centered">WILDLIFE</div></a>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-3 section3part imagep">
+                        <a href="Museums_Fairs.html" data-toggle="tooltip" title="Historical, art gallery, ..."><img alt="museums" class="img-responsive" src="images/museum.jpg"></a>
+                        <a href="Museums_Fairs.html"><div class="centered">MUSEUMS</div></a>
+                    </section>
+                </section>
+                <section class="row"> 
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 section3part imagep">
+                        <a href="Museums_Fairs.html" data-toggle="tooltip" title="Currently running"><img alt="fairs" class="img-responsive" src="images/fairs.jpg"></a>
+                        <a href="Museums_Fairs.html"><div class="centered">FAIRS</div></a>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 section3part imagep">
+                        <a href="Museums_Fairs.html" data-toggle="tooltip" title="Structures, tombs, ..."><img alt="Monuments" class="img-responsive" src="images/monuments.jpg"></a>
+                        <a href="Museums_Fairs.html"><div class="centered">MONUMENTS</div></a>
+                    </section>
+                </section>
+                <section class="row">
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-4 section3part imagep">
+                        <a href="Cuisine.html" data-toggle="tooltip" title="Authentic foods"><img alt="cuisine" class="img-responsive" src="images/cuisine.jpg"></a>
+                        <a href="Cuisine.html"><div class="centered">CUISINE</div></a>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-4 section3part imagep">
+                        <a href="#" data-toggle="tooltip" title="Hotels, resorts, ..."><img alt="hotels" class="img-responsive" src="images/hotels.jpg"></a>
+                        <a href="#"><div class="centered">ACCOMADATION</div></a>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-4 section3part imagep">
+                        <a href="HillStations.html" data-toggle="tooltip" title="Hill stations"><img alt="hill stations" class="img-responsive" src="images/hillstations.jpg"></a>
+                        <a href="HillStations.html"><div class="centered">HILL STATIONS</div></a>
+                    </section>
+                </section>
+            </section>
+        </main>
+        <footer class="navbar navbar-default navbar-foot">
+            <section class="container-fluid">
+                <section class="col-lg-3"></section>
+                <section class="col-lg-6">
+                    <ul class="nav navbar-nav footerlist">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="aboutus.html">ABOUT US</a></li>
+                        <li><a href="destinations.html">DESTINATIONS</a></li>
+                        <li><a href="booking.html">PLAN TRIPS</a></li>
+                        <li><a href="Contact.html">CONTACT US</a></li>
+                    </ul>
+                </section>
+                <section class="col-lg-3">
+                    <ul class="list-inline">
+                        <li><a href="javascript:poppage('fb')"><span class="fa fa-facebook-square fa-2x"></span> </a> </li>
+                        <li><a href="javascript:poppage('tr')"><span class="fa fa-twitter-square fa-2x"></span> </a> </li>
+                        <li><a href="javascript:poppage('ig')"><span class="fa fa-instagram fa-2x"></span> </a> </li>
+                    </ul>
+                </section>
+            </section>
+            <p>Copyright (c) 2022 All Rights Reserved | An Website for Tourism<br>Created by Angeline Shruthi M (21/PCSA/108) and Hanitha G (21/PCSA/124) from Stella Maris College, Chennai</p>
+        </footer>
+        <!--<script src="bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript">
+            function setheading(i){
+                sessionStorage.setItem('heading', i);
+                sessionStorage.setItem('imglocation', 'images/')
+                window.open('details.html','_self')
+            }
+            function poppage(page){
+                if(page == 'fb'){
+                    window.open('https://www.facebook.com/','popup');
+                }
+                else if(page == 'tr'){
+                    window.open('https://www.twitter.com/','popup');
+                }
+                else{
+                    window.open('https://www.instagram.com/','popup');
+                }
+            }
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            $('.owl-carousel').owlCarousel({
+                loop:false,
+                margin:10,
+                nav:false,
+                dots:false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                stagePadding: 50,
+                responsive:{
+                    0:{
+                        items:1,
+                        nav:true
+                    },
+                    500:{
+                        items:2,
+                        nav:true
+                    },
+                    700:{
+                        items:3,
+                        dots:true
+                    },
+                    1000:{
+                        items:4,
+                        dots:true
+                    },
+                    1100:{
+                        items:5,
+                        dots:true
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

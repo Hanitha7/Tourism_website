@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tourism | Sign Up</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <style>
+          .header {
+            margin: 10px;
+			overflow: hidden;
+		}
+        #name{
+               margin: 0;
+              padding-top: 0;
+              padding-left: 5px;
+              font-family: "Georgia";
+              font-size: 50px;
+              color: #01ad79;font-style: italic;
+                font-weight: bold;
+          }
+          #name:hover{
+              color: #0055B3;
+              background: transparent;
+              text-decoration: none;
+          }
+		.header-right a {
+		  float: left;
+		  margin-top:5px;
+		  color: #0055B3;
+		  text-align: center;
+		  padding: 14px;
+		  font-family:Calibri;
+		  font-style:bold;
+		  text-decoration: none;
+		  font-size: 20px; 
+		  line-height: 25px;
+		  border-radius: 4px;
+		}
+		.header a:hover {
+		  background-color: #0055B3;
+		  color: white;
+		}
+
+		.header a.active {
+		  background-color: #0055B3;
+		  color: white;
+		}
+
+		.header-right {
+		  float: right;
+		}
+
+		@media screen and (max-width: 500px) {
+		  .header a {
+			float: none;
+			display: block;
+			text-align: left;
+		  }
+		  
+		  .header-right {
+			float: none;
+		  }
+		}
+
+		a{
+			text-decoration:none;
+		}
+	img.navbar-brand{
+	width:50px;
+	height:50px;
+              margin: 10px 0 10px 10px;
+                padding: 0px;
+        border: none;
+          }
+		*{
+		  box-sizing: border-box;
+		}
+		
+		body{
+		  min-height: 100vh;
+		  align-items: center;
+		  justify-content: center;
+		  background-image: linear-gradient(to right top, #fff5ff, #fff3ff, #fff2fe, #fff0fe, #ffeefd, #f9eeff, #f3efff, #edefff, #dff3ff, #d0f7ff, #c7faf7, #cdfbe4);
+
+		}
+          .container{
+              position: relative;
+              max-width: 850px;
+              width: 100%;
+              background: #CDFBE4;
+              padding: 20px 30px;
+               box-shadow: 3px 3px 3px #0055B3;
+              perspective: 2700px;
+              border-radius:50px;
+          }
+          .container .cover{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  }
+          .container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+          .container .cover .front,
+          .container .cover .back{
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  
+  height: 100%;
+  width: 100%;
+}
+          .cover .back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+          .container .cover::before,
+          .container .cover::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #005583;
+  opacity: 0.1;
+  z-index: 12;
+  
+}
+          .container .cover::after{
+  opacity: 0.1;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+          .container .cover img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+  
+}
+          .container .cover .text{
+  position: absolute;
+  z-index: 130;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+          .cover .text .text-1,
+          .cover .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+          .cover .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+          .container .forms{
+  height: 100%;
+  width: 100%;
+   background: #CDFBE4;
+ 
+}
+          .container .form-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+          .form-content .login-form,
+          .form-content .signup-form{
+  width: calc(100% / 2 - 25px);
+}
+          .forms .form-content .title{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #0055B3;
+  font-family:Calibri;
+  text-align:center;
+  text-shadow:2px 2px 2px #01ad79;
+}
+          .forms .form-content .title:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100px;
+  
+}
+          .forms .signup-form  .title:before{
+  width: 100px;
+  margin-top:20px;
+}
+          .forms .form-content .input-boxes{
+  margin-top: 10px;
+}
+          .forms .form-content .input-box{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+          .form-content .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background:#CDFBE4;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #01ad79;
+  transition: all 0.3s ease;
+}
+          .form-content .input-box input:focus,
+          .form-content .input-box input:valid{
+  border-color: #01ad79;
+}
+          .form-content .input-box i{
+  position: absolute;
+  color: #0055B3;
+  font-size: 17px;
+}
+          .forms .form-content .text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+          .forms .form-content .text a{
+  
+  color:#00707F;
+  font-size:15px;
+}
+          .forms .form-content .text a:hover{
+  color:#7BCF2D
+  font-size:15px;
+}
+          .forms .form-content .button{
+  color: #fff;
+  margin-top: 40px;
+}
+          .forms .form-content .button input{
+  color: #fff;
+  background: #0055B3;
+  border-radius: 10px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+          .forms .form-content .button input:hover{
+  background: #01ad79;
+  border:none;
+  outline:none;
+}
+          
+          .forms .form-content label:hover{
+  text-decoration: underline;
+  font-size:15px;
+}
+         
+          .forms .form-content .sign-up-text{
+  text-align: center;
+  margin-top: 25px;
+  color:#005583;
+}
+          .container #flip{
+  display: none;
+}
+          @media (max-width: 730px) {
+              .container .cover{
+    display: none;
+  }
+              .form-content .login-form,
+              .form-content .signup-form{
+    width: 100%;
+  }
+              .form-content .signup-form{
+                  width: 100%;
+              }
+              .container #flip:checked ~ .forms .signup-form{
+                  display: block;
+              }
+              .container #flip:checked ~ .forms .login-form{
+                  display: none;
+              }
+          }
+         footer{
+		margin-top:80px;
+			background-color:#01AD79;
+			color:white;
+			font-family:Calibri;
+			font-size:15px;
+			text-align:center;
+			z-index:999;
+			padding:15px;
+			font-style:bold;
+			text-decoration:none;
+		}
+          footer a[href='#']{
+                cursor: default;
+                pointer-events: none;
+            }
+		#mySidenav{
+			margin-top:20px;
+		}
+          #mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 10px 25px;
+  width: 100px;
+  border-radius: 0 5px 5px 0;
+}
+          #mySidenav a:hover {
+              left: 0;
+          }
+          #blog {
+              top: 250px;
+              background-color: #0055B3;
+          }
+          #projects {
+              top: 350px;
+              background-color: #01ad79;
+          }
+          #contact {
+              top: 450px;
+              background-color: #0055B3;
+          }
+          #img01{
+              border-radius:50px;
+          }
+          .icon-bar{
+              background-color: grey;
+          }
+          .navbar-toggle{
+              border: 1px solid lightgrey;
+          }
+      </style>
+    </head>
+    <body>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        <!--JS Validation for Signup form-->
+        <script type="text/javascript">
+            function validateform2(){
+                var name=document.form2.name.value;
+                var a=/^[A-Za-z]+$/;
+                var email2=document.form2.email2.value;
+                var b=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var pass1=document.form2.pass1.value;
+                var pass2=document.form2.pass2.value;
+                var c=/^[A-Za-z]\w{6,14}$/;
+                if(name==""){
+                    alert("Please enter your name.");
+                    return false;
+                }
+                if(email2==""){
+                    alert("Please enter an Email ID.");
+                    return false;
+                }
+                if(pass1==""){
+                    alert("Please enter a Password.");
+                    return false;
+                }
+                if(pass2==""){
+                    alert("Please enter a Password.");
+                    return false;
+                }
+                if(a.test(name)==false)
+                {
+                    alert("Please enter a valid name.");
+                    return false;
+                }
+                if(b.test(email2)==false){
+                    alert("Please enter a valid Email ID.");
+                    return false;
+                }
+                if(c.test(pass1)==false){
+                    alert("Password should have atleast 6 characters and alphabets.Please enter your password again");
+                    return false;
+                }
+                if(c.test(pass2)==false){
+                    alert("Password should have atleast 6 characters and alphabets.Please enter your password again");
+                    return false;
+                }
+                if(pass1!=pass2){
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                alert("Registration Success :) ");
+                return true;
+            }
+			$(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <div class="header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+				<img class="navbar-brand img-responsive img-thumbnail" src="images/logo.jpg"><a href="homepage.html" id="name">Tourism</a>
+				<div id="navtop" class="collapse navbar-collapse header-right">
+					<a href="homepage.html"><b>Home</b></a>
+					<a href="aboutus.html"><b>About Us</b></a>
+					<a href="destinations.html"><b>Destinations</b></a>
+					<a href="booking.html"><b>Plan a Trip</b></a>
+					<a class="active"><b>Sign Up</b></a>	
+					<a href="Loginpage.html"><b>Sign In</b></a>	
+					<a href="Contact.html"><b>Contact Us</b></a>
+				</div>
+		</div>
+        <div id="mySidenav" class="sidenav">
+            <a target="_self" data-toggle="tooltip" title="Signup with Google" href="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&flowName=GlifWebSignIn&flowEntry=SignUp" id="blog"><img  id="img01" width="50px" height="50px" src="images/gmail.png"></a>
+            <a target="_self" data-toggle="tooltip" title="Signup with Facebook" href="https://www.facebook.com/" id="projects"><img width="50px" height="50px" src="images/fb.png"></a>
+            <a target="_self" data-toggle="tooltip" title="Signup with Instagram" href="https://www.instagram.com/accounts/login/" id="contact"><img width="50px" height="50px" src="images/ig.png"></a>
+        </div><br>
+        <div class="container">
+            <div class="cover">
+                <div class="front">
+                    <img src="images/k1.jpg" alt=""> 
+                    <div class="centered">Centered</div>
+                </div>
+                <div class="back">
+                    <img class="backImg" src="images/cu3.jpg" alt="">        
+                </div>
+            </div>
+            <div class="forms">
+                <div class="form-content">
+                    <div class="signup-form">
+                        <div class="title"><b>SIGNUP</b></div>
+                        <form name="form2" onsubmit="return validateform2()";>
+                            <div class="input-boxes">
+                                <div class="input-box">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Name" name="name">
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Email" name="email2">
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Password" name="pass1">
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Confirm Password" name="pass2">
+                                </div>
+                                <div class="button input-box">
+                                    <input type="submit" value="SIGN UP">
+                                </div>
+                                <div class="text sign-up-text">
+                                    <font size="3px">Already have an account?</font> 
+                                    <a href="Loginpage.html"><font color="#0055B3"> <b>Login now</b></font></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="homepage.html"><font color="white">HOME</font></a> | 
+            <a href="aboutus.html"><font color="white">ABOUT US</font></a> | 
+            <a href=destinations.html""><font color="white">DESTINATIONS</font></a> | 
+            <a href="booking.html"><font color="white">PLAN TRIPS</font></a> | 
+            <a href="Loginpage.html"><font color="white">SIGN IN</font></a> | 
+            <a href="Signuppage.html"><font color="white">SIGN UP</font></a> | 
+            <a href="Contact.html"><font color="white">CONTACT US</font></a><br>
+            <p>Copyright (c) 2022 All Rights Reserved | An Website for Tourism<br>Created by Angeline Shruthi M (21/PCSA/108) and Hanitha G (21/PCSA/124) from Stella Maris College, Chennai</p>
+        </footer>
+    </body>
+</html>
